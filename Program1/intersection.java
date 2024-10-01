@@ -36,5 +36,7 @@ public class intersection {
             }
         }
         System.out.println(h2);
+        sc.close();
     }
 }
+
