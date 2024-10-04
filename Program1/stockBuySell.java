@@ -1,6 +1,5 @@
-import java.util.Scanner;
-
-public class kadaneAlgorithm {
+import java.util.*;
+public class stockBuySell {
     public static void main(String args[])
     {
         Scanner sc = new Scanner(System.in);
@@ -12,21 +11,15 @@ public class kadaneAlgorithm {
         {
             arr[i] = sc.nextInt();
         }
-        int sum = 0;
-        int max = Integer.MIN_VALUE;
-        for(int i = 0 ; i<n ; i++)
+        int max = 0;
+        int min = Integer.MAX_VALUE;
+        for(int i = 0 ;  i<n ; i++)
         {
-            sum = sum+arr[i];
-            if(sum>0)
-            {
-                max = Math.max(max,sum);
-            }
-            if(sum<0)
-            {
-                sum = 0;
-            }
+            min = Math.min(min,arr[i]);
+            max = Math.max(max,(arr[i]-min));
         }
-        System.out.println("The maximum subarray sum is"+max);
+        System.out.println("The maximum profit would be "+max);
         sc.close();
     }
+    
 }
